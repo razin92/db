@@ -1,17 +1,11 @@
 ---
 - name: Converge
-  hosts: all
-  gather_facts: False
-  tasks:
-    - name: Install python for Ansible
-      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal python-zipstream)
-      become: True
-      changed_when: False
-
-- name: Converge
   become: True
   hosts: all
   vars:
     mongo_bind_ip: 0.0.0.0
+    ssh_port: 22
+    ssh_user: "{{ lookup('env', 'USER') }}"
+    ssh_identity_file: "{{ lookup('env', 'HOME') }}/.ssh/google_compute_engine"
   roles:
     - role: db
