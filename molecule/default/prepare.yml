@@ -2,6 +2,10 @@
 - name: Prepare
   hosts: all
   gather_facts: false
+  vars:
+    ssh_port: 22
+    ssh_user: "{{ lookup('env', 'USER') }}"
+    ssh_identity_file: "{{ lookup('env', 'HOME') }}/.ssh/google_compute_engine"
   tasks:
     - name: Install python for Ansible
       raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal python-zipstream)

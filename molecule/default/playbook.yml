@@ -4,5 +4,8 @@
   hosts: all
   vars:
     mongo_bind_ip: 0.0.0.0
+    ssh_port: 22
+    ssh_user: "{{ lookup('env', 'USER') }}"
+    ssh_identity_file: "{{ lookup('env', 'HOME') }}/.ssh/google_compute_engine"
   roles:
     - role: db
