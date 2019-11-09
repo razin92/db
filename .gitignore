@@ -1,0 +1,6 @@
+*.log
+*.tar
+*.pub
+credentials.json
+google_compute_engine
+venv_db/
