@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/razin92/db.svg?branch=master)](https://travis-ci.org/razin92/db)
 Role Name
 =========
 
@@ -9,17 +10,17 @@ Requirements
 
 For automated testing:
 
-molecule>=2.6
-testinfra>=1.10
-python-vagrant>=0.5.15
-ansible-lint>=4.1.0
+- molecule>=2.6
+- testinfra>=1.10
+- python-vagrant>=0.5.15
+- ansible-lint>=4.1.0
 
 Role Variables
 --------------
 
-mongo_port - Port number for mongodb service
-mongo_bind_ip - listening ip-address
-env - specify current environment
+- mongo_port - Port number for mongodb service
+- mongo_bind_ip - listening ip-address
+- env - specify current environment
 
 Example Playbook
 ----------------
@@ -29,13 +30,3 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
          - db
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-s_Razin

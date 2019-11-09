@@ -5,7 +5,8 @@ install:
 - pip install -r requirements.txt
 script:
 - molecule create
-- molceule --debug converge
+- molecule converge
+- molecule verify
 after_script:
 - molecule destroy
 env:
@@ -13,8 +14,7 @@ env:
   - secure: AhD8aKl1RISl/XiLlExXpwt84v4wvOSfoxrREdzviyqR0pnVFJ8hziLHLsMPOn2EWV7wMt8BIuEbvjSzdmyQxBzqIy56W4u9gQxB6i2cpxRpgpe+j1REOKVjNe1XglY8i4luHyHWwiZ/vLZzpbWLlhgXJWIsa4081ew5UP78yozqqMt5TY6o59Pee/SbdItiMYj/4MULCXIu822A7iIQkXJReDANsKU60j/qtKvd5CNzCnaKay7ZjRBrB2ryMQMszcZ+7uIrXlyh7sfsrG2oX8QGJb6eHRpIAU+S2u7n9Fp4YxvkYN79xhdBHnGFMXQGMEwI8F0/P647kQh5nw682kAMLOWp4K9OSVYi1zJDBJTgRHHXyaiTzwykZKo+3AAfyQaR9zd2cRfisyLqZqQBaI9CHvGHcOEvG/mg1YtPQbv+qpiQDljPEwKieeiYs26x0OjTMqwfYEYMcxhlCTAarTaa8UJH2eHq8UbNktvSVd2f8bAgwYckJwfGHyW5DaIKSYfh7/BSJxETufXAWmm5QFYXw14B1YVgk1ulI0lQ3+J7re8Id3+AVvvgjGY8oGuhvfs+9ehb9tox8Y23DDkrgWPwKb3eYQj6GXu4DkZCicMdxcvkKFWTa7kizaw1647c395sZ+PrsLnZMxWn7nPU6qYuce8DujLdg/Doj/72g3g=
   - secure: owYbWDaMQJNnvPiLO8E/CNtIgV7KN3SrOF6WQAGxlYR1H5zr6tINqYrKfmC2ezG85Zm3EJIqwTcW3ph5IQ3wukcCOD2PbIdAwT3xPbgKGV8zrsjnOGWdHbPM8fPTKcpeEwke2AETiGDTFqL5lIzNJeVq+/3sxSn4VLppJFbosJDzbgwczRmsoy+mwedE9KDO6F3hU/QcdmXfMnZp0Y0E29Y9yEAE56ZJ9f18YEU2cYTFy0yPg6IGiyEg1FlhmQ6EHVfeDDrjBrQGcnc1XIPQGZE9E5tlY50WWW7Btfz8/qY0KqNOwq7awykx3ZyrD4NtEx2yopawmzZAZEL3QGrzlSXl5DOZvG9uxYFnof1coBKfOJPYanmIOZuH9QNqYdO7xsnQTcFAR4cN782VOGNmc6OEYOp6tt8j47VgTHWHzSvyb3stZQWiYZz+FFux4hIc8bcIfS9n5pIcWxwfv28W/j60hPJsPE5dGK5e7dsBcX0bVQi9Jh2FMo41hN03dn2OmcZ5KDoYdCeJpfo/LyfWycoOq46v59XXH+6M7T0Hs8lxjFNZNsAHHsOfiCre42GOP5piAp1eQRo7gxXPgFmmKxTUu9s/yq7kFaSY1B7F5/aum07vb13gys8qmMsyGQN1bCUEit5WuBa/uh9P/MHqU4XIeNXnjrZ3v9myinJDnpw=
 before_install:
-- openssl aes-256-cbc -K $encrypted_639fe5e43c1b_key -iv $encrypted_639fe5e43c1b_iv
-  -in secrets.tar.enc -out secrets.tar -d
+- openssl aes-256-cbc -K $encrypted_639fe5e43c1b_key -iv $encrypted_639fe5e43c1b_iv -in secrets.tar.enc -out secrets.tar -d
 - tar xvf secrets.tar
 - mv google_compute_engine ~/.ssh/google_compute_engine
 - export GCE_CREDENTIALS_FILE="$(pwd)/credentials.json"
