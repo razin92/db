@@ -4,11 +4,9 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- ls -la
-- ls ~/.ssh/
-- echo $GCE_SERVICE_ACCOUNT_EMAIL
-- echo $GCE_CREDENTIALS_FILE
-- echo $GCE_PROJECT_ID
+- molecule create
+after_script:
+- molecule destroy
 env:
   global:
   - secure: o5sVl6Ob47ZEzJP8zcFX/tF1NUlZ4+I1R9b+PuTEO47QpLZKnG0/dzo8p1HxFGUNvpljmI3GyO5Ni1RWKNwJfYCaFjZDlue0ca2h7eotFtsFvkUT3Z5GJgZ3MB8gacNYPdyDMUg/hGolYUqERpWPNEC2bwBZiCB1RWZkb4e0+EZmqcuPAtbWSHl9Qvz1vCLQC8cWViPp3Xe1EnMbegvB6DH2ki1CzIcvMUZw7ueH4oKrCOJOJuu0kRBAIxaf7dUmbTi4HQrIrAhluLRHYUPM3b/1eF/RKLG4r41gT/t8jv9ViskUcYJcdm/7uhsUNhIRCriPGdvgAIEnzFaNL9HXPtymvOsKpLVpr7BMoc/+3db/+lf8y+eH9q1jbkGqiqLr0y3PF7XDwpRzDuZlrUA1fS9+kTzzfgOzKxYkxUZ6fubgBCWa6q+/hfmccbsoDLdWpf2JYp+rxV+ygeSI/xt7ydJc/I+KN5D7f7AYdpp6DpvNPQTfMSIes/R27pSybnn08Qgchb/O2fksf2O6JicHraaDtBeFVjupdfK4eNOXAhD/RHLSXvhc165aWEq+J8vYw5It7ar9Kw5JacSS0JZpJtR9zC5+tY3ZKTAqK7K2F/aNrCBlKUjMq02bDaNnnje2o7qSTyZDhm8m0GZJedlbpfkDJAJ06cTFSEEVgZsxiSA=
