@@ -10,8 +10,6 @@ platforms:
     zone: europe-west1-b
     machine_type: f1-micro
     image: ubuntu-1604-xenial-v20170919
-    credentials_file: ~/.gcp/key.json
-    project_id: wise-cycling-253214
 provisioner:
   name: ansible
   lint:
