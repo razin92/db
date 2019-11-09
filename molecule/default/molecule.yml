@@ -5,9 +5,6 @@ lint:
   name: yamllint
 driver:
   name: gce
-vars:
-  ssh_user: slav
-  ssh_identity_file: /home/slav/.ssh/slav
 platforms:
   - name: instance-travis
     zone: europe-west1-b
